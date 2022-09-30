@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Write mode</title>
+
+  <link rel="stylesheet" href="/css/post.css">
+</head>
+
+<body>
+  <div class="container">
+    <a href="/board">
+      <h1>Board</h1>
+    </a>
+    <h2>글 작성</h2>
+    <form action="/board/write" method="POST" enctype="multipart/form-data">
+      <div class="form_title">
+        <label>제목</label>
+        <input type="text" name="title" required />
+      </div>
+      <div class="form_content">
+        <label>내용</label>
+        <textarea name="content" id="" cols="50" rows="10" required></textarea>
+      </div>
+      <div class="form_img">
+        <label>이미지 업로드</label>
+        <input type="file" name="img" />
+      </div>
+      <button type="submit">작성</button>
+    </form>
+  </div>
+</body>
+
+</html>

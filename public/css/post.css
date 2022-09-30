@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.container > a {
+    text-align: center;
+    color: #277BC0;
+    font-size: 35px;
+}
+
+.container h2 {
+    text-align: center;
+    font-size: 30px;
+    margin: 30px 0;
+}
+
+.container form {
+    text-align: center;
+}
+
+.container form div {
+    margin: 40px 0;
+}
+
+.container form div label {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.container form div input, .container form div textarea {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.container form button {
+    font-size: 15px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #E8AA42;
+}
+

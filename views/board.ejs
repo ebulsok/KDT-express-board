@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Board</title>
+
+  <link rel="stylesheet" href="/css/board.css">
+</head>
+
+<body>
+  <div class="container">
+    <a href="">
+      <h1>Board</h1>
+    </a>
+    <nav>
+      <h3>게시글 수: <%= articleCounts %></h3>
+      <a href="/board/write">글 작성</a>
+      <a href="/login/logout" class="logout">로그아웃</a>
+    </nav>
+
+    <ul>
+      <% if (articleCounts > 0) { %>
+      <% for(let i = 0; i < articleCounts; i++) { %>
+      <li>
+        <h2><%= ARTICLE[i].title %></h2>
+        <p>작성자: <%= ARTICLE[i].userName ? ARTICLE[i].userName : ARTICLE[i].userID %></p>
+        <div class="content">
+          <p><%= ARTICLE[i].content %></p>
+          <% if (ARTICLE[i].img !=null) { %>
+          <img src="uploads/<%= ARTICLE[i].img %>" width="500">
+          <% } %>
+        </div>
+        <% if (ARTICLE[i].userID === userID) { %>
+        <a href="/board/edit/postID/<%= ARTICLE[i].postID %>">수정</a>
+        <a href="#" onclick="deletePost('<%= ARTICLE[i].postID %>');">삭제</a>
+        <% } %>
+      </li>
+      <% } %>
+      <% } else { %>
+      <li>
+        글이 없습니다!
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</body>
+
+<script>
+  function deletePost(postID) {
+    fetch(`/board/delete/postID/${postID}`, {
+      method: 'delete',
+      headers: {
+        'Content-type': 'application/json'
+      },
+    }).then((res) => {
+      location.href = '/board';
+    })
+  }
+</script>
+
+</html>
